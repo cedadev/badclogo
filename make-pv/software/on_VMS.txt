@@ -1,0 +1,53 @@
+
+OPENING AND READING Met Office Assimilated data files 
+using the ACSASM routines, on VMS
+
+
+==============================================================
+
+    This information was kindly provided by Lance Deaver, 
+    NASA Langley Research Center.
+
+==============================================================
+
+
+  1) binary ftp the .pp file from BADC to my VMS system
+     which makes the VMS file a 512 byte fixed record length file
+
+  2) set file/attributes=(lrl:4) myukmoassimfile.pp
+     (this converts it to fixed length 4 byte records)
+  
+  3) run a short fortran program to read in the converted file and write
+     out a new file for the VMS platform.
+
+      program readpp
+      implicit none
+      integer*4 length,i,j
+      byte bytedata(50000)
+
+      open(10,file='myukmoassimfile.pp',
+     &  form='unformatted',recordtype='fixed',recl=1,
+     &  convert='big_endian')
+
+      open(13,file='VMSFILE.PP',form='unformatted')
+
+ 25    read(10,end=333) length
+       do 10 i=1,length,4
+         read(10,end=333) (bytedata(j),j=i,i+3)
+ 10    continue
+
+       write(13) (bytedata(i),i=1,length)
+
+       read(10,end=333) length  !Each data record is prefixed and suffixed
+       goto 25                  ! by a byte count
+
+ 333   close(10)
+       close(13)
+      stop
+      end
+
+
+  4) Edit OPEN Statement for PP files in SUBROUTINE UKAOPN add the additional  
+     parameter  CONVERT='BIG_ENDIAN' in order to use the file VMSFILE.PP
+
+

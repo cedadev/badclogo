@@ -1,0 +1,31 @@
+This contains the bits needed to make a scalable version of the BADC logo.  
+It doesn't *exactly* match the existing logo, as I couldn't find a program 
+that actually contained the correct contour range (Bryan reckons it's 
+probably lost), but it's extremely close!
+
+At present this is an IDL program to write a .eps file, but dream of 
+SVG...
+
+NB plot.dat and plot.nc both contain the same data.  (plot.nc is more
+friendly for non-IDL use!)
+
+Where does it come from?  Okay, well it's all pieced together a bit... :-) 
+for purposes of running it, everything in this directory should actually 
+be self-contained (and only plot.dat and plot-postscript.pro is needed), 
+but for completeness here are some notes on the provenance.  Note that 
+some of the steps described below were performed interactively.
+
+Data is PV at 850K calculated from UKMO assimilation, 
+/badc/ukmo-assim/data/standard/1992/ppassm_ucorf_y92_m10_d11_h12.pp
+using PV routines supplied in /badc/ukmo-assim/software/supplier
+
+colour values were taken off existing image badc-logo-1000.png
+
+contour levels were worked out empirically to match above logo
+as closely as possible
+
+map projection was taken from an old program of Sam's (which also 
+contained the necessary clues about where to find the data)
+
+Alan
+22/11/06

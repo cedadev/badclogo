@@ -1,0 +1,54 @@
+UKMO Assimilated Data - Software
+================================
+
+BADC Team
+Nov 2001
+
+1. Contents
+-----------
+
+This directory contains the software for the UK Met. Office 
+assimilated data held at the BADC. This directory contains:
+
+Files:
+
+  The following files contain concatenated fortrans routines
+
+    + acsasm_exam_v5.f - an example program which reads the assimilated data
+                         files using the access routines
+    + acsasm_pv_v5.f - Routines to calculate PV
+    + acsasm_v5a.f - Access routines
+
+  on_VMS.txt file gives details of how to open and read pp files on a VMS machine.
+  This information was kindly supplied by Lance Deaver, NASA Langley Research Center.
+
+    
+Subdirectories:
+
+  The following directories contain the access routines and PV routines
+  in individual files. 
+
+    * access_routines
+    * pv_routines
+
+
+
+
+2. Restricted Data
+------------------
+
+The UKMO assimilated data is not public - we are required to 
+maintain a list of registered users for the Met. Office. Please 
+complete a "Conditions of Use" form (http://www.badc.rl.ac.uk/forms/) 
+if you would like to use the data. 
+
+3. Further Information
+----------------------
+
+For more infomation about the UKMO assimilated data, we suggest that
+you look at the BADC web pages at:
+
+       http://www.badc.rl.ac.uk/data/ukmo-assim/
+
+
+

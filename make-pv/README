@@ -1,0 +1,12 @@
+Data is PV at 850K calculated from UKMO assimilation, 
+/badc/ukmo-assim/data/standard/1992/ppassm_ucorf_y92_m10_d11_h12.pp
+using PV routines supplied in /badc/ukmo-assim/software/supplier
+
+This directory contains copies of the files referred to above, and could 
+be used if there was ever a need to re-generate the PV (although the 
+plot.nc file in the parent directory already has the PV, so this shouldn't 
+be necessary).
+
+The example Fortran main program acsasm_exam_v5a.f is set up to do 
+pretty much what is needed (read a file and calculate PV).  May need
+tweaking slightly.
